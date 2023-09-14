@@ -32,6 +32,11 @@ while True:
     screen.blit(ground_surface, (0, 300))   # (from left, from top-down )
     screen.blit(text_surface, (300, 50))
 
+    snail_rect.x -= 4
+
+    if snail_rect.right <= 0:
+        snail_rect.left = 800
+
     screen.blit(snail_surf, snail_rect)
 
     player_rect.left += 1
