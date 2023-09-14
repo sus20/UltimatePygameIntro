@@ -11,6 +11,7 @@ test_font = pygame.font.Font(
 
 sky_surface = pygame.image.load('graphics/sky.png').convert()  # (w,h)
 ground_surface = pygame.image.load('graphics/ground.png').convert()
+
 # (text, antiAliasing, color)
 text_surface = test_font.render('My game', False, 'Black').convert()
 
@@ -33,14 +34,14 @@ while True:
     screen.blit(text_surface, (300, 50))
 
     snail_rect.x -= 4
-
     if snail_rect.right <= 0:
         snail_rect.left = 800
 
     screen.blit(snail_surf, snail_rect)
-
-    player_rect.left += 1
     screen.blit(player_surf, player_rect)
+
+    if player_rect.colliderect(snail_rect):
+        print('collision')
 
     pygame.display.update()
     clock.tick(60)
