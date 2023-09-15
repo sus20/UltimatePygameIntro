@@ -29,6 +29,10 @@ while True:
             pygame.quit()
             exit()
 
+        # if event.type == pygame.MOUSEMOTION:
+        #     if player_rect.collidepoint(event.pos):
+        #         print('collision')
+
     screen.blit(sky_surface, (0, 0))
     screen.blit(ground_surface, (0, 300))   # (from left, from top-down )
     screen.blit(text_surface, (300, 50))
@@ -43,9 +47,9 @@ while True:
     # if player_rect.colliderect(snail_rect):
     #     print('collision')
 
-    mouse_pos = pygame.mouse.get_pos()
-    if player_rect.collidepoint(mouse_pos):
-        print('collision')
+    # mouse_pos = pygame.mouse.get_pos()
+    # if player_rect.collidepoint(mouse_pos):
+    #     print(pygame.mouse.get_pressed())
 
     pygame.display.update()
     clock.tick(60)
