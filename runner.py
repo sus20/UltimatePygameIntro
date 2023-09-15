@@ -31,6 +31,13 @@ while True:
             pygame.quit()
             exit()
 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                print('jump')
+
+        if event.type == pygame.KEYUP:
+            print('Key UP')
+
         # if event.type == pygame.MOUSEMOTION:
         #     if player_rect.collidepoint(event.pos):
         #         print('collision')
